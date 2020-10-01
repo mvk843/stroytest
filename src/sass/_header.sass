@@ -1,0 +1,151 @@
+.header
+	.header__top
+		color: $grey
+		background-color: $light-gray
+		border-bottom: 1px solid $border-gray
+		a
+			color: $grey
+	.top__content
+		display: flex
+		justify-content: space-between
+		padding: 6px 0
+	.header__location
+		position: relative
+		padding-left: 20px
+		cursor: pointer
+		&::before
+			@include icon
+			content: ''
+			position: absolute
+			top: 50%
+			left: 0
+			width: 14px
+			height: 17px
+			transform: translateY(-60%)
+			background-image: svg('location.svg')
+	.menu__item
+		@include va-top
+		margin: 0 12px
+		&.item--arrow
+			position: relative
+			margin-right: 0
+			padding-right: 15px
+			&::after
+				@include icon
+				content: ''
+				position: absolute
+				top: 50%
+				right: 0
+				width: 10px
+				height: 10px
+				background-image: svg('arrow-gray-down.svg')
+				transform: translateY(-50%)
+	.header__bottom
+		border-bottom: 1px solid $border-gray
+	.bottom__content
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 14px 0
+	.header__col
+		display: block
+		height: 40px
+	.header__logo
+		@include icon
+		width: 221px
+		height: 48px
+		background-image: img('logo.png')
+	.header__catalog
+		padding: 10px 15px
+		background-color: $yellow
+		border-radius: 4px
+		cursor: pointer
+	.catalog__content
+		position: relative
+		padding-left: 28px
+		&::before
+			@include icon
+			content: ''
+			position: absolute
+			top: 50%
+			left: 0
+			width: 20px
+			height: 20px
+			background-image: svg('catalog.svg')
+			transform: translateY(-50%)
+	.header__search
+		position: relative
+		padding: 8px 0
+		width: 525px
+		border: 1px solid $border-gray
+		border-radius: 4px
+		&::after
+			@include icon
+			content: ''
+			position: absolute
+			top: 50%
+			right: 10px
+			width: 20px
+			height: 20px
+			transform: translateY(-50%)
+			background-image: svg('search.svg')
+		input
+			padding: 0 15px
+			width: 100%
+			height: 100%
+			color: $grey
+			&::placeholder
+				color: $grey
+		.autocomplete
+			position: relative
+			margin-left: -1px
+			width: calc(100% + 2px)
+		.autocomplete-results
+			padding: 0
+			margin: 0
+			border: 1px solid #eeeeee
+			height: 120px
+			overflow: auto
+			width: 100%
+			background-color: $white
+		.autocomplete-result
+			list-style: none
+			text-align: left
+			padding: 4px 15px
+			cursor: pointer
+			&.is-active,
+			&:hover
+				background-color: #4aae9b
+				color: white
+	.header__list
+		@include icon
+		position: relative
+		padding: 7px 15px
+		width: 110px
+		background-color: $light-gray
+		border: 1px solid $border-gray
+		border-radius: 4px
+		cursor: pointer
+	.list__content
+		position: relative
+		padding-left: 32px
+		&::before
+			@include icon
+			content: ''
+			position: absolute
+			left: 0
+			top: 50%
+			width: 20px
+			height: 24px
+			transform: translateY(-55%)
+			background-image: svg('list.svg')
+	.header__profile
+		position: relative
+		width: 40px
+		color: $white
+		background-color: $purple
+		border-radius: 1000px
+		cursor: pointer
+		p
+			@include abs-center
+			margin-top: -1px

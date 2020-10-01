@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Stroytest</title>
+	<meta name="description" content="Stroytest">
+	<meta name="title" content="Stroytest">
+	<meta name="author" content="Maverick">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+	<header class="header">
+		<div class="header__top">
+			<div class="wrapper wrapper--default">
+				<div class="top__content">
+					<div class="h2 header__location">Волгоградская область</div>
+					<div class="h2 header__menu">
+						<div class="menu__item"><a href="#">Тендеры</a></div>
+						<div class="menu__item"><a href="#">База подрядчиков</a></div>
+						<div class="menu__item item--arrow"><a href="#">Другие сервисы</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__bottom">
+			<div class="wrapper wrapper--default">
+				<div class="bottom__content">
+					<a href="#" class="header__col header__logo"></a>
+					<div class="h2 header__col header__catalog">
+						<div class="catalog__content">Каталог</div>
+					</div>
+					<div class="h1 header__col header__search">
+						<div id="app">
+							<autocomplete :items="[ 'Apple', 'Banana', 'Orange', 'Mango', 'Pear', 'Peach', 'Grape', 'Tangerine', 'Pineapple']" />
+						</div>
+					</div>
+					<div class="h1 header__col header__list">
+						<div class="list__content">Список</div>
+					</div>
+					<div class="h1 header__col header__profile"><p>А</p></div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<script type="text/x-template" id="autocomplete">
+		<div class="autocomplete">
+			<input
+				type="text"
+				@input="onChange"
+				v-model="search"
+				@keyup.down="onArrowDown"
+				@keyup.up="onArrowUp"
+				@keyup.enter="onEnter"
+				class="input"
+			/>
+			<ul
+				id="autocomplete-results"
+				v-show="isOpen"
+				class="autocomplete-results"
+			>
+				<li
+					class="loading"
+					v-if="isLoading"
+				>
+					Loading results...
+				</li>
+				<li
+					v-else
+					v-for="(result, i) in results"
+					:key="i"
+					@click="setResult(result)"
+					class="autocomplete-result"
+					:class="{ 'is-active': i === arrowCounter }"
+				>
+					{{ result }}
+				</li>
+			</ul>
+		</div>
+	</script>
+
+	<script src="assets/js/script.js"></script>
+
+</body>
+</html>

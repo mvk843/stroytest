@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+package-lock.json
+node_modules
+src/lib/*
+!src/lib/.gitkeep
+
+www/bitrix
+www/upload
+www/web.config
+
+www/modules
+www/storage
+www/vendor
+www/plugins/rainlab
